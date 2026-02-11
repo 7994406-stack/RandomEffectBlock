@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "randomeffect:block/effect_block"
+    }
+  }
+}

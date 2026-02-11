@@ -19,17 +19,17 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     
-    - name: Download Gradle 7.6
+    - name: Download Gradle 8.1
       run: |
-        wget https://services.gradle.org/distributions/gradle-7.6-bin.zip
-        unzip -q gradle-7.6-bin.zip
-        echo "$PWD/gradle-7.6/bin" >> $GITHUB_PATH
+        wget https://services.gradle.org/distributions/gradle-8.1-bin.zip
+        unzip -q gradle-8.1-bin.zip
+        echo "$PWD/gradle-8.1/bin" >> $GITHUB_PATH
     
     - name: Build with Gradle
-      run: gradle-7.6/bin/gradle build --no-daemon
+      run: gradle-8.1/bin/gradle build --no-daemon
       
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: RandomEffectMod-JAR
+        name: RandomEffectMod-1.20.1
         path: build/libs/*.jar
