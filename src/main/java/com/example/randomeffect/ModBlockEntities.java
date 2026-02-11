@@ -1,7 +1,6 @@
 package com.example.randomeffect;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -14,8 +13,4 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("effect_block_entity",
                     () -> BlockEntityType.Builder.of(EffectBlockEntity::new,
                             RandomEffectMod.EFFECT_BLOCK.get()).build(null));
-    
-    public static void register(IEventBus eventBus) {
-        BLOCK_ENTITIES.register(eventBus);
-    }
 }
