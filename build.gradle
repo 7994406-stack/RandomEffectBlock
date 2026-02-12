@@ -12,28 +12,15 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'java'
 
 group = 'com.example'
-version = '1.0.0-1.20.1'
+version = '1.0.0'
 
 java {
-    archivesBaseName = 'randomeffect'
     toolchain.languageVersion = JavaLanguageVersion.of(17)
 }
 
 minecraft {
     mappings channel: 'official', version: '1.20.1'
-    
-    runs {
-        client {
-            workingDirectory project.file('run')
-        }
-        server {
-            workingDirectory project.file('run')
-        }
-    }
-}
-
-repositories {
-    maven { url = 'https://maven.minecraftforge.net' }
+    copyIdeResources = true
 }
 
 dependencies {
@@ -43,33 +30,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "randomeffect",
-            "Specification-Version": "1",
-            "Implementation-Title": project.name,
-            "Implementation-Version": project.version
-        ])
-    }
-}
-jar {
-    manifest {
-        attributes([
-            "Specification-Title": "randomeffect",
-            "Specification-Version": "1",
-            "Implementation-Title": "Random Effect Block",
-            "Implementation-Version": "1.0.0",
-            "Implementation-Vendor": "YTBudka_mx",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-        ])
-    }
-}
-jar {
-    manifest {
-        attributes([
-            "Specification-Title": "randomeffect",
-            "Specification-Version": "1",
-            "Implementation-Title": "Random Effect Block",
-            "Implementation-Version": "1.0.0",
-            "Implementation-Vendor": "YTBudka_mx",
+            "Specification-Title"     : "randomeffect",
+            "Specification-Vendor"    : "YTBudka_mx",
+            "Specification-Version"   : "1",
+            "Implementation-Title"    : "Random Effect Block",
+            "Implementation-Version"  : "1.0.0",
+            "Implementation-Vendor"   : "YTBudka_mx",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
