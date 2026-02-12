@@ -31,23 +31,20 @@ public class RandomEffectMod {
     public static final RegistryObject<Item> EFFECT_BLOCK_ITEM = ITEMS.register("effect_block",
             () -> new BlockItem(EFFECT_BLOCK.get(), new Item.Properties()));
 
-    // Создаем свою вкладку креатива
     public static final RegistryObject<CreativeModeTab> MOD_TAB = CREATIVE_TABS.register("effect_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.randomeffect_tab"))
                     .icon(() -> new ItemStack(EFFECT_BLOCK.get()))
                     .displayItems((parameters, output) -> {
-                        output.accept(EFFECT_BLOCK_ITEM.get()); // Добавляем блок во вкладку
+                        output.accept(EFFECT_BLOCK_ITEM.get());
                     }).build());
 
     public RandomEffectMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         CREATIVE_TABS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
-
         MinecraftForge.EVENT_BUS.register(this);
     }
 }

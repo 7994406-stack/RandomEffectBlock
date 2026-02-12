@@ -7,20 +7,22 @@ buildscript {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.+', changing: false
     }
 }
-
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'java'
 
 group = 'com.example'
 version = '1.0.0'
 
-java {
-    toolchain.languageVersion = JavaLanguageVersion.of(17)
-}
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
     mappings channel: 'official', version: '1.20.1'
-    copyIdeResources = true
+}
+
+sourceSets.main.resources { srcDir 'src/main/resources' }
+
+processResources {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
 
 dependencies {
@@ -30,12 +32,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title"     : "randomeffect",
-            "Specification-Vendor"    : "YTBudka_mx",
-            "Specification-Version"   : "1",
-            "Implementation-Title"    : "Random Effect Block",
-            "Implementation-Version"  : "1.0.0",
-            "Implementation-Vendor"   : "YTBudka_mx",
+            "Specification-Title": "randomeffect",
+            "Specification-Vendor": "YTBudka_mx",
+            "Specification-Version": "1",
+            "Implementation-Title": "Random Effect Block",
+            "Implementation-Version": "1.0.0",
+            "Implementation-Vendor": "YTBudka_mx",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
