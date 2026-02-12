@@ -6,8 +6,8 @@ license="MIT"
 modId="randomeffect"
 version="1.0.0"
 displayName="Random Effect Block"
-description="Block that gives random effects to players every 10 seconds"
-authors="YourName"
+description="Block that gives random effects to players"
+authors="YTBudka_mx"
 
 [[dependencies.randomeffect]]
     modId="forge"
