@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "randomeffect:block/effect_block"
-    }
+    "": { "model": "randomeffect:block/effect_block" }
   }
 }
