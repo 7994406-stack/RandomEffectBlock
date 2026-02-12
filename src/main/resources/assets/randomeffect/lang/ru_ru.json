@@ -1,4 +1,5 @@
 {
   "block.randomeffect.effect_block": "Блок случайных эффектов",
-  "item.randomeffect.effect_block": "Блок случайных эффектов"
+  "item.randomeffect.effect_block": "Блок случайных эффектов",
+  "itemGroup.randomeffect_tab": "Магия YTBudka_mx"
 }
